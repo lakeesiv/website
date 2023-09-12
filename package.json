@@ -7,7 +7,8 @@
     "start": "astro dev --port 3000 --host",
     "build": "astro build",
     "preview": "astro preview --port 3000 --host",
-    "astro": "astro"
+    "astro": "astro",
+    "media": "non media"
   },
   "dependencies": {
     "@astrojs/react": "^3.0.2",
@@ -18,6 +19,7 @@
     "astro": "^3.0.12",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
+    "notion-on-next": "^1.0.20",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "tailwind-merge": "^1.14.0",
