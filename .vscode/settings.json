@@ -9,7 +9,7 @@
     "node_modules/": true,
     "**/*.d.ts": true,
     "bun.lockb": true,
-    "components.json": true,
-    "tsconfig.json": true
+    "components.json": true
+    // "tsconfig.json": true
   }
 }
