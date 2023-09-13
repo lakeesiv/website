@@ -1,4 +1,3 @@
-import Footer from "components/layout/footer";
 import NavBar from "components/layout/navbar";
 import "lib/non/styles.css";
 import "components/globals.css";
@@ -7,11 +6,11 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Emgineers",
-  description: "Emmanuel College Engineering Society",
+  title: "Lakee Sivaraya",
+  description: "Lakee Sivaraya's Personal Website",
   openGraph: {
-    title: "Emgineers",
-    description: "Emmanuel College Engineering Society",
+    title: "Lakee Sivaraya",
+    description: "Lakee Sivaraya's Personal Website",
   },
 };
 
@@ -23,9 +22,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <title>Emgineers</title>
+        <title>Lakee Sivaraya</title>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta property="og:image" content="https://emgineer.vercel.app/og/" />
+        {/* <meta property="og:image" content="https://emgineer.vercel.app/og/" /> */}
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
@@ -33,7 +32,6 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen">
             <NavBar />
             <main className="mb-auto">{children}</main>
-            <Footer />
           </div>
           <Analytics />
         </Providers>

@@ -9,20 +9,24 @@ import { Skeleton } from "components/ui/skeleton";
 
 const links = [
   {
-    name: "Blog",
-    href: "/blog",
-  },
-  {
-    name: "Events",
-    href: "/events",
-  },
-  {
-    name: "Funding",
-    href: "/funding",
+    name: "Home",
+    href: "/",
   },
   {
     name: "About",
     href: "/about",
+  },
+  {
+    name: "Blog",
+    href: "/blog",
+  },
+  {
+    name: "Projects",
+    href: "/projects",
+  },
+  {
+    name: "About",
+    href: "/contact",
   },
 ];
 
@@ -32,12 +36,8 @@ const NavBar = () => {
       className="top-0 z-40 flex  flex-row mx-auto w-full md:backdrop-blur-sm"
       id="header"
     >
-      <div className="py-2 px-3 mx-auto w-full  md:flex md:justify-between max-w-8xl md:px-4">
-        <div className="flex justify-between">
-          <Link className="flex items-center" href={"/"}>
-            <Logo />
-          </Link>
-        </div>
+      <div className="py-4 px-4 mx-auto w-full  md:flex md:justify-between max-w-8xl md:px-4">
+        <div className="flex justify-between"></div>
         <nav
           className="items-center w-full md:w-auto hidden md:flex h-screen md:h-auto "
           aria-label="Main navigation"
@@ -46,7 +46,7 @@ const NavBar = () => {
             {links.map((link) => (
               <li key={link.name}>
                 <Link
-                  className="px-4 py-3 flex items-center 
+                  className="px-5 py-3 flex items-center 
                   hover:scale-105  hover:text-emma-secondary  transition-all  duration-200 ease-in-out
                   "
                   href={link.href}

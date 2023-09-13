@@ -8,7 +8,7 @@ export const revalidate = 86400;
 export default function Home() {
   return (
     <>
-      <section className="flex flex-col items-center justify-center p-12">
+      <section className="flex flex-col items-center justify-center px-12">
         <Title animate>Lakee Sivaraya</Title>
         <Description>Engineering Student @ Univeristy of Cambridge</Description>
       </section>
