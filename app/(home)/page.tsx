@@ -9,8 +9,8 @@ export default function Home() {
   return (
     <>
       <section className="flex flex-col items-center justify-center p-12">
-        <Title animate>Emgineers</Title>
-        <Description>Emmanuel College Engineering Society</Description>
+        <Title animate>Lakee Sivaraya</Title>
+        <Description>Engineering Student @ Univeristy of Cambridge</Description>
       </section>
 
       <Suspense fallback={<BlogSectionLoading />}>

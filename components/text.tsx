@@ -35,7 +35,7 @@ export const Title: FC<TitleProps> = ({
   const animateClass = animate ? "animate-fade-up opacity-0 " : "";
 
   const className = cn(
-    `${textClass}  ${animateClass} bg-gradient-to-br from-emma-primary to-emma-secondary bg-clip-text text-center font-extrabold tracking-[-0.02em] text-transparent drop-shadow-sm pb-[0.8rem] `,
+    `${textClass}  ${animateClass}  text-center font-bold tracking-[-0.02em] text-foreground  drop-shadow-sm pb-[0.8rem] `,
     props.className
   );
 
