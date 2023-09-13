@@ -1,0 +1,21 @@
+import { Suspense } from "react";
+import BlogSection, { BlogSectionLoading } from "./blog-section";
+import { Description, Title } from "components/text";
+
+export const runtime = "nodejs";
+export const revalidate = 86400;
+
+export default function Home() {
+  return (
+    <>
+      <section className="flex flex-col items-center justify-center p-12">
+        <Title animate>Emgineers</Title>
+        <Description>Emmanuel College Engineering Society</Description>
+      </section>
+
+      <Suspense fallback={<BlogSectionLoading />}>
+        <BlogSection />
+      </Suspense>
+    </>
+  );
+}
