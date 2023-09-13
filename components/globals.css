@@ -51,13 +51,13 @@
   }
 
   .dark {
-    --background: hsl(221, 39%, 11%);
+    --background: hsl(210, 14%, 9%);
     --foreground: hsl(210, 40%, 98%);
 
-    --muted: hsl(217.2, 32.6%, 17.5%);
+    --muted: hsl(210, 14%, 11%);
     --muted-foreground: hsl(215, 20.2%, 65.1%);
 
-    --popover: hsl(221, 39%, 10%);
+    --popover: hsl(210, 14%, 11%);
     --popover-foreground: hsl(210, 40%, 98%);
 
     --card: hsl(221, 39%, 9%);
