@@ -4,6 +4,7 @@ import "components/globals.css";
 import { Providers } from "components/layout/providers";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
+import Footer from "components/layout/footer";
 
 export const metadata: Metadata = {
   title: "Lakee Sivaraya",
@@ -32,6 +33,7 @@ export default function RootLayout({
           <div className="flex flex-col min-h-screen">
             <NavBar />
             <main className="mb-auto">{children}</main>
+            <Footer />
           </div>
           <Analytics />
         </Providers>

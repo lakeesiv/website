@@ -1,5 +1,5 @@
 import { Description, Title } from "components/text";
-import SocialIcons from "./_components/social-icons";
+import SocialIcons from "../../components/layout/social-icons";
 import Terminal from "./_components/terminal";
 
 export const runtime = "nodejs";

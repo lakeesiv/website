@@ -40,7 +40,7 @@ const Terminal: FC<TerminalProps> = ({}) => {
           lakeesiv/website
         </p>
       </div>
-      <div className="w-[80%]  bg-slate-800 rounded-b-xl z-10">
+      <div className="w-[80%]  bg-muted rounded-b-xl z-10">
         <div className="p-4">
           <span
             className="font-mono w-[80%] whitespace-pre-wrap text-sm md:text-md"

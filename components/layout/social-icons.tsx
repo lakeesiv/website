@@ -6,14 +6,14 @@ interface SocialIconsProps {}
 
 const SocialIcons: FC<SocialIconsProps> = ({}) => {
   return (
-    <div className="flex flex-row gap-8">
+    <div className="flex flex-row gap-3">
       <Button
         variant="ghost"
         className="text-emma-primary"
         size="icon"
         href="https://github.com/lakeesiv"
       >
-        <Github className="w-8 h-8" />
+        <Github className="w-5 h-5" />
       </Button>
       <Button
         variant="ghost"
@@ -21,7 +21,7 @@ const SocialIcons: FC<SocialIconsProps> = ({}) => {
         size="icon"
         href="https://www.linkedin.com/in/lakeesiv/"
       >
-        <Linkedin className="w-8 h-8" />
+        <Linkedin className="w-5 h-5" />
       </Button>
     </div>
   );
