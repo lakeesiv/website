@@ -9,7 +9,7 @@ const SocialIcons: FC<SocialIconsProps> = ({}) => {
     <div className="flex flex-row gap-3">
       <Button
         variant="ghost"
-        className="text-emma-primary"
+        className="text-theme-primary"
         size="icon"
         href="https://github.com/lakeesiv"
       >
@@ -17,7 +17,7 @@ const SocialIcons: FC<SocialIconsProps> = ({}) => {
       </Button>
       <Button
         variant="ghost"
-        className="text-emma-primary"
+        className="text-theme-primary"
         size="icon"
         href="https://www.linkedin.com/in/lakeesiv/"
       >

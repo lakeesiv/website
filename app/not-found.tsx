@@ -16,30 +16,30 @@ const NotFoud: FC = ({}) => {
       />
       <div className="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-[500px] mt-4 text-sm md:text-md">
         <Card className="md:col-span-2 p-4 flex  align-center items-center text-center">
-          <p className="font-extrabold text-emma-primary">What will you do?</p>
+          <p className="font-extrabold text-theme-primary">What will you do?</p>
         </Card>
         <Card className="grid grid-cols-2 grid-rows-2 p-4 gap-4">
           <a
             href="/"
-            className="transition-colors text-emma-primary hover:text-emma-secondary font-extrabold underline underline-offset-4"
+            className="transition-colors text-theme-primary hover:text-theme-secondary font-extrabold underline underline-offset-4"
           >
             Home
           </a>
           <a
             href="/blog"
-            className="transition-colors text-emma-primary hover:text-emma-secondary font-extrabold underline underline-offset-4"
+            className="transition-colors text-theme-primary hover:text-theme-secondary font-extrabold underline underline-offset-4"
           >
             Blog
           </a>
           <a
             href="/projects"
-            className="transition-colors text-emma-primary hover:text-emma-secondary font-extrabold underline underline-offset-4"
+            className="transition-colors text-theme-primary hover:text-theme-secondary font-extrabold underline underline-offset-4"
           >
             Projects
           </a>
           <a
             href="/about"
-            className="transition-colors text-emma-primary hover:text-emma-secondary font-extrabold underline underline-offset-4"
+            className="transition-colors text-theme-primary hover:text-theme-secondary font-extrabold underline underline-offset-4"
           >
             About
           </a>

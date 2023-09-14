@@ -4,11 +4,11 @@
 
 @layer base {
   :root {
-    --emma-navy: #111144;
-    --emma-pink: #ffcccc;
-    --emma-navy-secondary: hsl(240, 60%, 35%);
-    --emma-pink-secondary: #e9689dce;
-    --emma-blue: #0000d8;
+    --theme-navy: #111144;
+    --theme-pink: #ffcccc;
+    --theme-navy-secondary: hsl(240, 60%, 35%);
+    --theme-pink-secondary: #e9689dce;
+    --theme-blue: #0000d8;
   }
 
   :root {
@@ -46,8 +46,8 @@
     --logo-filter: invert(9%) sepia(46%) saturate(4664%) hue-rotate(235deg)
       brightness(82%) contrast(124%);
 
-    --emma-primary: var(--emma-navy);
-    --emma-secondary: var(--emma-navy-secondary);
+    --theme-primary: hsl(170, 40%, 10%);
+    --theme-secondary: hsl(170, 40%, 50%);
   }
 
   .dark {
@@ -83,8 +83,8 @@
     --logo-filter: invert(83%) sepia(9%) saturate(846%) hue-rotate(314deg)
       brightness(98%) contrast(110%);
 
-    --emma-primary: var(--emma-pink);
-    --emma-secondary: var(--emma-pink-secondary);
+    --theme-primary: hsl(170, 40%, 90%);
+    --theme-secondary: hsl(170, 40%, 50%);
   }
 }
 
@@ -92,19 +92,19 @@ p.notion_paragraph a {
   text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 6px;
-  @apply font-extrabold hover:brightness-150 hover:text-emma-secondary hover:decoration-emma-secondary transition-colors text-emma-primary decoration-emma-primary;
+  @apply font-extrabold hover:brightness-150 hover:text-theme-secondary hover:decoration-theme-secondary transition-colors text-theme-primary decoration-theme-primary;
 }
 
 h1.notion_heading_1 span {
-  @apply text-emma-primary;
+  @apply text-theme-primary;
 }
 
 h2.notion_heading_2 span {
-  @apply text-emma-primary;
+  @apply text-theme-primary;
 }
 
 h3.notion_heading_3 span {
-  @apply text-emma-primary;
+  @apply text-theme-primary;
 }
 
 @layer base {
