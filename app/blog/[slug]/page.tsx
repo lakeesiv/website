@@ -29,7 +29,7 @@ export default async function BlogPage({ params }: { params: PageProps }) {
   const image = mediaMap[databaseId]?.[page.id]?.cover;
 
   return (
-    <div className="p-8 md:p-12 max-w-[800px] mx-auto">
+    <div className="p-2 md:p-12 max-w-[80%] mx-auto">
       <div className="">
         {image && (
           <Image
