@@ -2,9 +2,6 @@
 
 import Link from "next/link";
 import MobileNav from "./mobile-nav";
-import dynamic from "next/dynamic";
-import { Suspense } from "react";
-import { Skeleton } from "components/ui/skeleton";
 
 const links = [
   {
@@ -24,7 +21,7 @@ const links = [
     href: "/projects",
   },
   {
-    name: "About",
+    name: "Contact",
     href: "/contact",
   },
 ];
