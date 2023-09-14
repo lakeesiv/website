@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Logo from "./logo";
 import MobileNav from "./mobile-nav";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
@@ -37,7 +36,11 @@ const NavBar = () => {
       id="header"
     >
       <div className="py-4 px-4 mx-auto w-full  md:flex md:justify-between max-w-8xl md:px-4">
-        <div className="flex justify-between"></div>
+        <div className="flex flex-row-reverse">
+          <div className="md:hidden">
+            <MobileNav links={links} />
+          </div>
+        </div>
         <nav
           className="items-center w-full md:w-auto hidden md:flex h-screen md:h-auto "
           aria-label="Main navigation"

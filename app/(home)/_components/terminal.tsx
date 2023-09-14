@@ -42,7 +42,10 @@ const Terminal: FC<TerminalProps> = ({}) => {
       </div>
       <div className="w-[80%]  bg-slate-800 rounded-b-xl z-10">
         <div className="p-4">
-          <span className="font-mono whitespace-pre" ref={el} />
+          <span
+            className="font-mono w-[80%] whitespace-pre-wrap text-sm md:text-md"
+            ref={el}
+          />
         </div>
       </div>
     </div>
