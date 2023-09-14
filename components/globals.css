@@ -30,16 +30,16 @@
     --primary: hsl(222.2, 47.4%, 11.2%);
     --primary-foreground: hsl(210, 40%, 98%);
 
-    --secondary: hsl(210, 40%, 96.1%);
+    --secondary: hsl(170, 40%, 70%);
     --secondary-foreground: hsl(222.2, 47.4%, 11.2%);
 
-    --accent: hsl(210, 40%, 96.1%);
+    --accent: hsl(170, 40%, 70%);
     --accent-foreground: hsl(222.2, 47.4%, 11.2%);
 
     --destructive: hsl(0, 84.2%, 60.2%);
     --destructive-foreground: hsl(210, 40%, 98%);
 
-    --ring: hsl(215, 20.2%, 65.1%);
+    --ring: hsl(170, 40%, 70%);
 
     --radius: 0.5rem;
 
@@ -60,25 +60,25 @@
     --popover: hsl(210, 14%, 11%);
     --popover-foreground: hsl(210, 40%, 98%);
 
-    --card: hsl(221, 39%, 9%);
+    --card: hsl(210, 14%, 10%);
     --card-foreground: hsl(210, 40%, 98%);
 
-    --border: hsl(217.2, 32.6%, 17.5%);
+    --border: hsl(210, 14%, 12%);
     --input: hsl(217.2, 32.6%, 17.5%);
 
     --primary: hsl(210, 40%, 98%);
     --primary-foreground: hsl(222.2, 47.4%, 11.2%);
 
-    --secondary: hsl(217.2, 32.6%, 17.5%);
+    --secondary: hsl(170, 40%, 30%);
     --secondary-foreground: hsl(210, 40%, 98%);
 
-    --accent: hsl(217.2, 32.6%, 17.5%);
+    --accent: hsl(170, 40%, 30%);
     --accent-foreground: hsl(210, 40%, 98%);
 
     --destructive: hsl(0, 62.8%, 30.6%);
     --destructive-foreground: hsl(0, 85.7%, 97.3%);
 
-    --ring: hsl(217.2, 32.6%, 17.5%);
+    --ring: hsl(170, 40%, 30%);
 
     --logo-filter: invert(83%) sepia(9%) saturate(846%) hue-rotate(314deg)
       brightness(98%) contrast(110%);
