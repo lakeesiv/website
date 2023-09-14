@@ -32,16 +32,16 @@ const NotFoud: FC = ({}) => {
             Blog
           </a>
           <a
-            href="/events"
+            href="/projects"
             className="transition-colors text-emma-primary hover:text-emma-secondary font-extrabold underline underline-offset-4"
           >
-            Events
+            Projects
           </a>
           <a
-            href="/credits"
+            href="/about"
             className="transition-colors text-emma-primary hover:text-emma-secondary font-extrabold underline underline-offset-4"
           >
-            Credits
+            About
           </a>
         </Card>
       </div>
