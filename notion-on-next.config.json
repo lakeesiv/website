@@ -1,12 +1,12 @@
 {
   "databases": {
-    "a83071d8-1416-44a9-98cf-45638a583a82": {
-      "id": "a83071d8-1416-44a9-98cf-45638a583a82",
-      "name": "Blog"
+    "18e17d83-1956-42de-a93d-9c34fe391502": {
+      "id": "18e17d83-1956-42de-a93d-9c34fe391502",
+      "name": "Projects"
     },
-    "533a35ca-b69f-4a5d-add8-35c083eaa97e": {
-      "id": "533a35ca-b69f-4a5d-add8-35c083eaa97e",
-      "name": "Events"
+    "90944374-9dcf-4d13-9c40-e8f48d55b841": {
+      "id": "90944374-9dcf-4d13-9c40-e8f48d55b841",
+      "name": "Blog"
     }
   },
   "typesFolderPath": "./types"

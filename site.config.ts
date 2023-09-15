@@ -1,5 +1,6 @@
 const siteConfig = {
-  blogDatabaseId: "a83071d8-1416-44a9-98cf-45638a583a82",
+  blogDatabaseId: "90944374-9dcf-4d13-9c40-e8f48d55b841",
+  projectsDatabaseId: "18e17d83-1956-42de-a93d-9c34fe391502",
   stats: {
     name: "Lakee Sivaraya",
     occupation: "3rd Year Student",

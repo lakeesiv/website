@@ -1,21 +1,13 @@
-import {
-  PageObjectResponse,
-  RichTextPropertyItemObjectResponse,
-  DatePropertyItemObjectResponse,
-  TitlePropertyItemObjectResponse,
-  NumberPropertyItemObjectResponse,
-  CheckboxPropertyItemObjectResponse,
-  EmailPropertyItemObjectResponse,
-  SelectPropertyItemObjectResponse,
-  LastEditedByPropertyItemObjectResponse,
-  CreatedTimePropertyItemObjectResponse,
-} from "@notionhq/client/build/src/api-endpoints";
+import { PageObjectResponse } from "@notionhq/client/build/src/api-endpoints";
 
 export interface NotionOnNextPageObjectResponse extends PageObjectResponse {
   slug: string | undefined;
   title: string | undefined;
   coverImage: string | undefined;
+  databaseName: string | undefined;
+  databaseId: string | undefined;
 }
+
 export interface mediaMapInterface {
   [key: string]: {
     [key: string]: {
@@ -24,24 +16,35 @@ export interface mediaMapInterface {
   };
 }
 
-export type BlogPageObjectResponse = NotionOnNextPageObjectResponse & {
+export type ProjectsPageObjectResponse = NotionOnNextPageObjectResponse & {
   properties: {
-    Description: RichTextPropertyItemObjectResponse;
-    Date: DatePropertyItemObjectResponse;
-    Name: TitlePropertyItemObjectResponse;
+    Github: Extract<
+      PageObjectResponse["properties"][string],
+      { type: "rich_text" }
+    >;
+    Description: Extract<
+      PageObjectResponse["properties"][string],
+      { type: "rich_text" }
+    >;
+    Tags: Extract<
+      PageObjectResponse["properties"][string],
+      { type: "multi_select" }
+    >;
+    Date: Extract<PageObjectResponse["properties"][string], { type: "date" }>;
+    Website: Extract<
+      PageObjectResponse["properties"][string],
+      { type: "rich_text" }
+    >;
+    Name: Extract<PageObjectResponse["properties"][string], { type: "title" }>;
   };
 };
-export type EventsPageObjectResponse = NotionOnNextPageObjectResponse & {
+export type BlogPageObjectResponse = NotionOnNextPageObjectResponse & {
   properties: {
-    Price: NumberPropertyItemObjectResponse;
-    "Extra Details": RichTextPropertyItemObjectResponse;
-    Id: RichTextPropertyItemObjectResponse;
-    Description: RichTextPropertyItemObjectResponse;
-    Location: RichTextPropertyItemObjectResponse;
-    Date: DatePropertyItemObjectResponse;
-    Hide: CheckboxPropertyItemObjectResponse;
-    "Duration (hrs)": NumberPropertyItemObjectResponse;
-    stripePriceId: RichTextPropertyItemObjectResponse;
-    Name: TitlePropertyItemObjectResponse;
+    Description: Extract<
+      PageObjectResponse["properties"][string],
+      { type: "rich_text" }
+    >;
+    Date: Extract<PageObjectResponse["properties"][string], { type: "date" }>;
+    Name: Extract<PageObjectResponse["properties"][string], { type: "title" }>;
   };
 };

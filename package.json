@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "pnpm media && next build",
     "start": "next start",
-    "lint": "next lint",
+    "check-types": "tsc --noemit",
+    "lint": "npm run check-types && next lint",
     "media": "non media"
   },
   "dependencies": {

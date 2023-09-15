@@ -6,10 +6,10 @@ import { getBlocks, getParsedPages } from "lib/non";
 import { cache } from "react";
 import {
   BlogPageObjectResponse,
-  EventsPageObjectResponse,
+  ProjectsPageObjectResponse,
 } from "types/notion-on-next.types";
 import siteConfig from "site.config";
-import { ParsedEventDetails, parseEvent } from "lib/notion";
+import { ParsedProject, parseProject } from "lib/notion";
 
 export const revalidate = 86400;
 
@@ -25,47 +25,33 @@ export const getBlogPages = cache(
     return sortedPages;
   }
 );
-
-export const getEventPages = cache(
-  async (
-    removePastEvents: boolean = false
-  ): Promise<EventsPageObjectResponse[]> => {
-    const pages: EventsPageObjectResponse[] = await getParsedPages(
-      siteConfig.eventsDatabaseId
+export const getProjectPages = cache(
+  async (): Promise<ProjectsPageObjectResponse[]> => {
+    const pages: ProjectsPageObjectResponse[] = await getParsedPages(
+      siteConfig.projectsDatabaseId
     );
     const sortedPages = sortPages(pages);
-    if (!removePastEvents) return sortedPages;
-
-    const now = new Date();
-
-    const filteredPages = sortedPages.filter((page) => {
-      const pageDate = new Date(page.properties.Date.date?.start as string);
-      return pageDate.getTime() > now.getTime();
-    });
-
-    return filteredPages;
+    return sortedPages;
   }
 );
 
-export interface ParsedEventsPageObjectResponse
-  extends EventsPageObjectResponse {
-  parsed: ParsedEventDetails;
+export interface ParsedProjectPageObjectResponse
+  extends ProjectsPageObjectResponse {
+  parsed: ParsedProject;
 }
 
-export const getParsedEventPages = cache(
+export const getParsedProjectPages = cache(
   async (
     removePastEvents: boolean = false
-  ): Promise<ParsedEventsPageObjectResponse[]> => {
-    const pages: EventsPageObjectResponse[] = await getEventPages(
-      removePastEvents
-    );
+  ): Promise<ParsedProjectPageObjectResponse[]> => {
+    const pages: ProjectsPageObjectResponse[] = await getProjectPages();
     const parsedPages = pages.map((page) => {
       try {
-        const parsedResults = parseEvent(page);
+        const parsedResults = parseProject(page);
 
         if (!parsedResults) return null;
 
-        const parsedPage: ParsedEventsPageObjectResponse = {
+        const parsedPage: ParsedProjectPageObjectResponse = {
           ...page,
           parsed: parsedResults,
         };
@@ -77,15 +63,13 @@ export const getParsedEventPages = cache(
     });
     const filteredPages = parsedPages.filter(
       (page) => page !== null
-    ) as ParsedEventsPageObjectResponse[];
+    ) as ParsedProjectPageObjectResponse[];
 
     return filteredPages;
   }
 );
 
-const sortPages = <T extends BlogPageObjectResponse | EventsPageObjectResponse>(
-  pages: T[]
-) => {
+const sortPages = <T extends BlogPageObjectResponse>(pages: T[]) => {
   // get all pages with a date
   const datedPages = pages.filter((page) => page.properties.Date.date?.start);
   // sort pages by date descending
