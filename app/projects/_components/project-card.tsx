@@ -27,17 +27,13 @@ export const ProjectCard = ({
   const image = mediaMap[siteConfig.projectsDatabaseId]?.[page.id]?.cover;
 
   return (
-    <article
-      className={`max-w-md mx md:max-w-none grid gap-6 md:gap-8 ${
-        image ? "md:grid-cols-2" : ""
-      }`}
-    >
+    <article className="flex flex-col gap-6 border-border p-4 bg-card rounded-lg">
       {image && (
-        <Link className="relative block group" href={`/blog/${page.slug}`}>
+        <Link className="relative block group" href={`/projects/${page.slug}`}>
           <Image
             alt={page.title || "Cover Image for " + page.id}
             src={image}
-            className="max-h-[300px] w-full rounded-md  object-cover object-center"
+            className="max-h-[250px] w-full rounded-md  object-cover object-center hover:scale-[1.02] transition ease-in duration-100"
             width={300}
             height={300}
           />
@@ -58,12 +54,24 @@ export const ProjectCard = ({
           {/* @ts-ignore -- Notion Team currently has incorrect type for RichTextObjectResponse. The API returns an an array of RichTextObjectResponse inside of RichTextPropertyItemObjectResponse, but the type definition is not aware of that yet  */}
           {page.properties?.Description?.rich_text[0]?.plain_text}
         </p>
-        <footer className="mt-4">
-          <div>
-            <ProjectDate date={page.properties.Date.date?.start!} />
-          </div>
+        <footer className="mt-4 flex flex-col gap-4">
+          <ProjectDate date={page.properties.Date.date?.start!} />
+          <Tags tags={page.parsed.tags} />
         </footer>
       </div>
     </article>
   );
 };
+
+const Tags = ({ tags }: { tags: string[] }) => (
+  <div className="flex flex-wrap gap-2">
+    {tags.map((tag) => (
+      <span
+        className="font-mono text-xs text-black bg-theme-secondary bg-opacity-10 px-2 py-1 rounded-md"
+        key={tag}
+      >
+        {tag}
+      </span>
+    ))}
+  </div>
+);

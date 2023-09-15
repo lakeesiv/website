@@ -13,7 +13,7 @@ export default async function BlogIndex() {
       <Title variant="h3" size="sm">
         Projects
       </Title>
-      <div className="grid md:grid-cols-3 gap-x-8 gap-y-20 max-w-[80%] mx-auto p-12">
+      <div className="grid md:grid-cols-3 gap-8 md:gap-y-12  max-w-[90%] mx-auto p-2 md:p-12 pb-12">
         {pages.map((page) => (
           <ProjectCard page={page} key={page.id} />
         ))}
