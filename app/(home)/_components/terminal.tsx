@@ -13,10 +13,14 @@ const Terminal: FC<TerminalProps> = ({}) => {
   useEffect(() => {
     const stats = "`" + JSON.stringify(siteConfig.stats, null, 4);
     +"`";
+
+    const terminalStart =
+      "`<span style='color:#c3e87b'>@lakeesiv</span> 🠖 <span style='color:#7399e6'>/website</span> <span style='color:#b01a1a'>(master)</span> $ `";
+
     const text = [
-      "`~\\Desktop\\stats>`^1000 ls^1000\n `lakee.py`\n`~\\Desktop\\stats>`^1000 python ^1000 \n `Python 3.8.3`\n `>>>`^1000 <span style='color:#FF1493'>import</span> lakee ^1000 \n `>>>`^1000 <span style='color:#0080FF'>print(</span>lakee<span style='color:#0080FF'>.get_stats()</span><span style='color:#0080FF'>)</span>^1000\n".concat(
-        `${stats}`
-      ),
+      '<termialStart>^1000 node ^1000 \n `Welcome to Node.js v20.6.0.\n Type .help for more information.`\n `>`^1000 fetch("https://lakeesiv.com/about/me/").then(res => res.json()).then(console.log) ^1000\n'
+        .concat(`${stats}`)
+        .replace("<termialStart>", terminalStart),
     ];
 
     const options = {
