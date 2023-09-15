@@ -24,7 +24,7 @@ export const ProjectCard = ({
 }: {
   page: ParsedProjectPageObjectResponse;
 }) => {
-  const image = mediaMap[siteConfig.blogDatabaseId]?.[page.id]?.cover;
+  const image = mediaMap[siteConfig.projectsDatabaseId]?.[page.id]?.cover;
 
   return (
     <article

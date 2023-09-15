@@ -14,7 +14,7 @@ export const runtime = "nodejs";
 export const revalidate = 86400;
 
 const mediaMap = _mediaMap as mediaMapInterface;
-const databaseId = siteConfig.blogDatabaseId;
+const databaseId = siteConfig.projectsDatabaseId;
 
 interface PageProps {
   slug: string;
