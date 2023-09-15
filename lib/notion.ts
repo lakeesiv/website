@@ -57,8 +57,8 @@ export const parseProject = (page: ProjectsPageObjectResponse) => {
   const description = page.properties.Description.rich_text[0]
     .plain_text as string;
   const tags = page.properties.Tags?.multi_select?.map((tag) => tag.name);
-  const github = page.properties?.Github?.rich_text?.[0].plain_text;
-  const website = page.properties?.Website?.rich_text?.[0].plain_text;
+  const github = page.properties?.Github?.rich_text?.[0]?.plain_text;
+  const website = page.properties?.Website?.rich_text?.[0]?.plain_text;
   const date =
     new Date(page.properties.Date.date?.start as string) || new Date();
 
