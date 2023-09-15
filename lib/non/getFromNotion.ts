@@ -17,7 +17,7 @@ export const notion = new Client({
     return fetch(url, {
       ...opts,
       next: { tags: ["notion"] },
-      cache: "force-cache",
+      cache: process.env.NODE_ENV === "production" ? "force-cache" : "no-cache",
     });
   },
 });
