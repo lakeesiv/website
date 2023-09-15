@@ -17,18 +17,6 @@ export default async function BlogIndex() {
         {pages.map((page) => (
           <ProjectCard page={page} key={page.id} />
         ))}
-        {pages.map((page) => (
-          <ProjectCard page={page} key={page.id} />
-        ))}
-        {pages.map((page) => (
-          <ProjectCard page={page} key={page.id} />
-        ))}
-        {pages.map((page) => (
-          <ProjectCard page={page} key={page.id} />
-        ))}
-        {pages.map((page) => (
-          <ProjectCard page={page} key={page.id} />
-        ))}
       </div>
     </div>
   );

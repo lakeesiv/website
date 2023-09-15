@@ -5,6 +5,7 @@ import _mediaMap from "public/notion-media/media-map.json";
 import React from "react";
 import siteConfig from "site.config";
 import { cachedGetBlocks, getParsedProjectPages } from "../../get";
+import InfoCard from "../_components/info-card";
 
 export const runtime = "nodejs";
 export const revalidate = 86400;
@@ -28,16 +29,20 @@ export default async function BlogPage({ params }: { params: PageProps }) {
   const blocks = await cachedGetBlocks(page.id);
 
   return (
-    <div className="p-2 md:p-12 max-w-[80%] mx-auto">
-      <div className="">
-        <div className="mt-4">
+    <div className="p-2 md:p-12 max-w-[80%] mx-auto ">
+      <div className="flex flex-col md:flex-row justify-between">
+        <div className="my-4">
           <div className="text-3xl font-extrabold text-theme-primary hover:text-theme-secondary transition ease-in duration-200 mb-2">
             {page.title}
           </div>
           <div className="text-gray-400">
             {formatDate(page.properties.Date.date?.start) || "No Date"}
           </div>
+          <div className="my-4">
+            {page.parsed.description || "No Description"}
+          </div>
         </div>
+        <InfoCard page={page} />
       </div>
       <NotionPageBody
         blocks={blocks}
