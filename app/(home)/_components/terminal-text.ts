@@ -10,10 +10,6 @@ const kewordColor = "#dcce81";
 const stringColor = "#9a3b2f";
 const blueColor = "#7399e6";
 
-fetch("https://lakeesiv.com/about/me/")
-  .then((res) => res.json())
-  .then(console.log);
-
 const terminalStart =
   "`<span style='color:#c3e87b'>@lakeesiv</span><span style='color:#7399e6'>/website</span> <span style='color:#b01a1a'>(master)</span> $ `";
 
