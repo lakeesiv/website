@@ -10,6 +10,7 @@ import { getBlocks } from "../index";
 import React from "react";
 import { Code } from "./Code";
 import { Table } from "./Table";
+import Latex from "./Latex";
 
 /**
  * A recursive component that renders a Notion block and child blocks.
@@ -260,8 +261,16 @@ export const Block = asyncComponent(
         );
       case "table":
         return <Table block={block} />;
+      case "equation":
+        const latex = "$$" + block.equation.expression + "$$";
+        return (
+          <div className={`notion_${block.type}`}>
+            <Latex displayMode={true}>{latex}</Latex>
+          </div>
+        );
 
       default:
+        console.log(block);
         return <div>Block {block.type} not supported</div>;
     }
   }
