@@ -3,6 +3,7 @@
 import React, { FC, HTMLAttributes, useEffect, useRef } from "react";
 import Typed from "typed.js";
 import siteConfig from "site.config";
+import terminalText from "./terminal-text";
 
 interface TerminalProps extends HTMLAttributes<HTMLDivElement> {}
 
@@ -15,7 +16,7 @@ const Terminal: FC<TerminalProps> = ({}) => {
     +"`";
 
     const terminalStart =
-      "`<span style='color:#c3e87b'>@lakeesiv</span> 🠖 <span style='color:#7399e6'>/website</span> <span style='color:#b01a1a'>(master)</span> $ `";
+      "`<span style='color:#c3e87b'>@lakeesiv</span><span style='color:#7399e6'>/website</span> <span style='color:#b01a1a'>(master)</span> $ `";
 
     const text = [
       '<termialStart>^1000 node ^1000 \n `Welcome to Node.js v20.6.0.\n Type .help for more information.`\n `>`^1000 fetch("https://lakeesiv.com/about/me/").then(res => res.json()).then(console.log) ^1000\n'
@@ -24,7 +25,7 @@ const Terminal: FC<TerminalProps> = ({}) => {
     ];
 
     const options = {
-      strings: text,
+      strings: [terminalText],
       typeSpeed: 40,
       backSpeed: 0,
       loop: false,
@@ -47,7 +48,7 @@ const Terminal: FC<TerminalProps> = ({}) => {
       <div className="w-[80%]  bg-muted rounded-b-xl z-10">
         <div className="p-4">
           <span
-            className="font-mono w-[80%] whitespace-pre-wrap text-sm md:text-md"
+            className="font-mono w-[80%] whitespace-pre-wrap text-sm  break-all"
             ref={el}
           />
         </div>
