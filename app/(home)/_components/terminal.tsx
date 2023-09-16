@@ -12,18 +12,6 @@ const Terminal: FC<TerminalProps> = ({}) => {
   const typed = useRef<Typed | null>(null);
 
   useEffect(() => {
-    const stats = "`" + JSON.stringify(siteConfig.stats, null, 4);
-    +"`";
-
-    const terminalStart =
-      "`<span style='color:#c3e87b'>@lakeesiv</span><span style='color:#7399e6'>/website</span> <span style='color:#b01a1a'>(master)</span> $ `";
-
-    const text = [
-      '<termialStart>^1000 node ^1000 \n `Welcome to Node.js v20.6.0.\n Type .help for more information.`\n `>`^1000 fetch("https://lakeesiv.com/about/me/").then(res => res.json()).then(console.log) ^1000\n'
-        .concat(`${stats}`)
-        .replace("<termialStart>", terminalStart),
-    ];
-
     const options = {
       strings: [terminalText],
       typeSpeed: 40,
