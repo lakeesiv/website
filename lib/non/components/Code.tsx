@@ -1,4 +1,4 @@
-import { atomOneDark } from "react-syntax-highlighter/dist/cjs/styles/hljs";
+import { vs2015 } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import React from "react";
 import SyntaxHighlighter from "react-syntax-highlighter/dist/cjs/default-highlight";
 
@@ -10,7 +10,7 @@ export const Code = ({
   language: string;
 }) => {
   return (
-    <SyntaxHighlighter language={language} style={atomOneDark}>
+    <SyntaxHighlighter language={language} style={vs2015} showLineNumbers>
       {text}
     </SyntaxHighlighter>
   );

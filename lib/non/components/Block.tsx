@@ -200,11 +200,12 @@ export const Block = asyncComponent(
           </ol>
         );
       case "code":
+        const language = block.code.language || "javascript";
         return (
           <div className={`notion_${block.type}`}>
             <Code
               text={block.code.rich_text[0].plain_text}
-              language={"javascript"}
+              language={language}
             />
             {block.code.caption && (
               <span className="notion_caption">

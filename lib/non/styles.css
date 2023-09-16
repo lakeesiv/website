@@ -136,3 +136,8 @@
   font-size: smaller;
   border-radius: 3px;
 }
+
+div.notion_code,
+pre {
+  border-radius: 0.5rem !important;
+}
