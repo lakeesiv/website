@@ -106,6 +106,8 @@
 .notion_image_container,
 .notion_video_container {
   margin: 1.25rem 0 1.25rem 0;
+  display: grid;
+  place-items: center;
 }
 
 .notion_callout {

@@ -90,9 +90,9 @@
 
 p.notion_paragraph a {
   text-decoration: underline;
-  text-decoration-thickness: 2px;
-  text-underline-offset: 6px;
-  @apply font-extrabold hover:brightness-150 hover:text-theme-secondary hover:decoration-theme-secondary transition-colors text-theme-primary decoration-theme-primary;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  @apply font-semibold hover:brightness-150 hover:text-theme-secondary hover:decoration-theme-secondary transition-colors text-theme-primary decoration-theme-primary;
 }
 
 h1.notion_heading_1 span {
