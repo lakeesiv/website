@@ -36,7 +36,7 @@ const InfoCard: FC<InfoCardProps> = ({ page }) => {
       )}
       {/* Tags */}
 
-      <ul className="mt-3 flex flex-wrap ">
+      <ul className="mt-4 flex flex-wrap ">
         {tags.map((tag) => (
           <li
             key={tag}
