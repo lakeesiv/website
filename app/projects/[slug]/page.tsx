@@ -67,7 +67,6 @@ const formatDate = (date: string | undefined) => {
   // format date as Mon, Day Year (e.g. Nov 4, 2020)
   return d.toLocaleDateString(undefined, {
     month: "short",
-    day: "numeric",
     year: "numeric",
   });
 };
