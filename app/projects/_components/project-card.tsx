@@ -27,7 +27,7 @@ export const ProjectCard = ({
   const image = mediaMap[siteConfig.projectsDatabaseId]?.[page.id]?.cover;
 
   return (
-    <article className="flex flex-col gap-6 border-border p-4 bg-card rounded-lg">
+    <article className="flex flex-col gap-6 border-border p-4 ">
       {image && (
         <Link className="relative block group" href={`/projects/${page.slug}`}>
           <Image
