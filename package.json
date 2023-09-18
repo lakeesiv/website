@@ -43,6 +43,7 @@
     "react-wrap-balancer": "^1.0.0",
     "superjson": "1.12.2",
     "typed.js": "^2.0.16",
+    "verify-hcaptcha": "^1.0.0",
     "zod": "^3.22.2"
   },
   "devDependencies": {

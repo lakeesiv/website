@@ -17,7 +17,7 @@ import { Button } from "components/ui/button";
 import { Textarea } from "components/ui/textarea";
 import { Card } from "components/ui/card";
 
-const formSchema = z.object({
+export const contactFormSchema = z.object({
   title: z.string().min(3).max(50),
   message: z.string().min(10).max(500),
   email: z.string().email(),
@@ -25,11 +25,11 @@ const formSchema = z.object({
 });
 
 export function ContactForm() {
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof contactFormSchema>>({
+    resolver: zodResolver(contactFormSchema),
   });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  function onSubmit(values: z.infer<typeof contactFormSchema>) {
     console.log(values);
   }
 
@@ -80,7 +80,7 @@ export function ContactForm() {
           <div className="flex justify-center px-4">
             <div className="hidden md:block">
               <HCaptcha
-                sitekey="93272084-404e-48ee-85d3-4c7ffd48158e"
+                sitekey={process.env.SITE_KEY!}
                 onVerify={(token, ekey) => form.setValue("token", token)}
                 size="normal"
                 theme="light"
@@ -88,7 +88,7 @@ export function ContactForm() {
             </div>
             <div className="md:hidden">
               <HCaptcha
-                sitekey="93272084-404e-48ee-85d3-4c7ffd48158e"
+                sitekey={process.env.SITE_KEY!}
                 onVerify={(token, ekey) => form.setValue("token", token)}
                 size="compact"
                 theme="light"
