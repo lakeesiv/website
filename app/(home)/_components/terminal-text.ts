@@ -18,7 +18,10 @@ const thenText = coloredText("then", kewordColor);
 const jsonText = coloredText("json", kewordColor);
 const consoleText = coloredText("console.log", kewordColor);
 
-const fetchReqUrl = coloredText('`"https://lakeesiv.com/me/"`', stringColor);
+const fetchReqUrl = coloredText(
+  '`"https://lakeesiv.com/api/me/"`',
+  stringColor
+);
 const resText = coloredText("res", blueColor);
 
 const terminalText = '<termialStart>^1000 node ^1000\n\
