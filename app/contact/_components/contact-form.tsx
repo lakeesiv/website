@@ -1,5 +1,5 @@
 "use client";
-
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -21,6 +21,7 @@ const formSchema = z.object({
   title: z.string().min(3).max(50),
   message: z.string().min(10).max(500),
   email: z.string().email(),
+  token: z.string(),
 });
 
 export function ContactForm() {
@@ -75,6 +76,12 @@ export function ContactForm() {
                 <FormMessage />
               </FormItem>
             )}
+          />
+          <HCaptcha
+            sitekey="10000000-ffff-ffff-ffff-000000000001"
+            onVerify={(token, ekey) => form.setValue("token", token)}
+            size="compact"
+            theme="dark"
           />
           <Button type="submit">Submit</Button>
         </form>
