@@ -77,12 +77,24 @@ export function ContactForm() {
               </FormItem>
             )}
           />
-          <HCaptcha
-            sitekey="93272084-404e-48ee-85d3-4c7ffd48158e"
-            onVerify={(token, ekey) => form.setValue("token", token)}
-            size="compact"
-            theme="dark"
-          />
+          <div className="flex justify-center px-4">
+            <div className="hidden md:block">
+              <HCaptcha
+                sitekey="93272084-404e-48ee-85d3-4c7ffd48158e"
+                onVerify={(token, ekey) => form.setValue("token", token)}
+                size="normal"
+                theme="light"
+              />
+            </div>
+            <div className="md:hidden">
+              <HCaptcha
+                sitekey="93272084-404e-48ee-85d3-4c7ffd48158e"
+                onVerify={(token, ekey) => form.setValue("token", token)}
+                size="compact"
+                theme="light"
+              />
+            </div>
+          </div>
           <Button type="submit">Submit</Button>
         </form>
       </Form>
