@@ -78,7 +78,7 @@ export function ContactForm() {
             )}
           />
           <HCaptcha
-            sitekey="10000000-ffff-ffff-ffff-000000000001"
+            sitekey="93272084-404e-48ee-85d3-4c7ffd48158e"
             onVerify={(token, ekey) => form.setValue("token", token)}
             size="compact"
             theme="dark"
