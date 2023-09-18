@@ -33,7 +33,7 @@ export function ContactForm() {
   }
 
   return (
-    <Card className="p-6">
+    <Card className="p-6 md:p-8">
       <h1 className="text-2xl font-extrabold mb-4 text-center">Contact</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
