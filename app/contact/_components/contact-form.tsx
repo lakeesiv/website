@@ -1,5 +1,6 @@
 "use client";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
+import siteConfig from "site.config";
 import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -80,7 +81,7 @@ export function ContactForm() {
           <div className="flex justify-center px-4">
             <div className="hidden md:block">
               <HCaptcha
-                sitekey={process.env.SITE_KEY!}
+                sitekey={siteConfig.captchaSiteKey!}
                 onVerify={(token, ekey) => form.setValue("token", token)}
                 size="normal"
                 theme="light"
@@ -88,7 +89,7 @@ export function ContactForm() {
             </div>
             <div className="md:hidden">
               <HCaptcha
-                sitekey={process.env.SITE_KEY!}
+                sitekey={siteConfig.captchaSiteKey!}
                 onVerify={(token, ekey) => form.setValue("token", token)}
                 size="compact"
                 theme="light"

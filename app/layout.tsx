@@ -6,14 +6,14 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import Footer from "components/layout/footer";
 
-export const metadata: Metadata = {
-  title: "Lakee Sivaraya",
-  description: "Lakee Sivaraya's Personal Website",
-  openGraph: {
-    title: "Lakee Sivaraya",
-    description: "Lakee Sivaraya's Personal Website",
-  },
-};
+// export const metadata: Metadata = {
+//   title: "Lakee Sivaraya",
+//   description: "Lakee Sivaraya's Personal Website",
+//   openGraph: {
+//     title: "Lakee Sivaraya",
+//     description: "Lakee Sivaraya's Personal Website",
+//   },
+// };
 
 export default function RootLayout({
   children,

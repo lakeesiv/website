@@ -1,8 +1,9 @@
 import { contactFormSchema } from "app/contact/_components/contact-form";
 import { NextResponse } from "next/server";
 import { verifyHcaptchaToken } from "verify-hcaptcha";
+import siteConfig from "site.config";
 
-export const runtime = "edge";
+// export const runtime = "edge";
 
 export const POST = async (request: Request) => {
   const body = request.json();
@@ -12,7 +13,7 @@ export const POST = async (request: Request) => {
   const result = await verifyHcaptchaToken({
     token: token,
     secretKey: process.env.SECRET_KEY!,
-    siteKey: process.env.SITE_KEY!,
+    siteKey: siteConfig.captchaSiteKey!,
   });
 
   if (!result.success) {
