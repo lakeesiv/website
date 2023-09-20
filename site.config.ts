@@ -1,6 +1,7 @@
 const siteConfig = {
   blogDatabaseId: "90944374-9dcf-4d13-9c40-e8f48d55b841",
   projectsDatabaseId: "18e17d83-1956-42de-a93d-9c34fe391502",
+  contactDatabaseId: "9c3dc43c-39df-4210-88ba-096393e17376",
   captchaSiteKey: "93272084-404e-48ee-85d3-4c7ffd48158e",
   stats: {
     name: "Lakee Sivaraya",

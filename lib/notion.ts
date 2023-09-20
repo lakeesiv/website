@@ -1,47 +1,62 @@
 import { Client } from "@notionhq/client";
 import siteConfig from "site.config";
 import { ProjectsPageObjectResponse } from "types/notion-on-next.types";
+import { ContactFormValues } from "app/contact/_components/schema";
 
-// export class Notion {
-//   notion: Client;
-//   eventsDatabaseId: string;
+export class Notion {
+  notion: Client;
+  contactDatabaseId: string;
 
-//   constructor() {
-//     this.notion = new Client({
-//       auth: process.env.NOTION_KEY,
-//     });
-//     this.eventsDatabaseId = siteConfig.eventsDatabaseId;
-//   }
+  constructor() {
+    this.notion = new Client({
+      auth: process.env.NOTION_KEY,
+    });
+    this.contactDatabaseId = siteConfig.contactDatabaseId;
+  }
 
-//   async getEvent(id: string) {
-//     const res = await this.notion.databases.query({
-//       database_id: this.eventsDatabaseId,
-//       filter: {
-//         property: "Id",
-//         rich_text: {
-//           equals: id,
-//         },
-//       },
-//     });
+  async insertContact(details: ContactFormValues) {
+    const { email, message, title, name } = details;
 
-//     return res.results[0] as EventsPageObjectResponse;
-//   }
-
-//   async getParsedEvent(id: string) {
-//     const event = await this.getEvent(id);
-
-//     if (!event) {
-//       throw new Error(`Event ${id} not found`);
-//     }
-//     const res = parseEvent(event);
-
-//     if (!res) {
-//       throw new Error(`Event ${id} not found`);
-//     }
-
-//     return res;
-//   }
-// }
+    const response = await this.notion.pages.create({
+      parent: {
+        database_id: this.contactDatabaseId,
+      },
+      properties: {
+        Name: {
+          rich_text: [
+            {
+              text: {
+                content: name,
+              },
+            },
+          ],
+        },
+        Title: {
+          title: [
+            {
+              text: {
+                content: title,
+              },
+            },
+          ],
+        },
+        Email: {
+          email: email,
+        },
+        Text: {
+          rich_text: [
+            {
+              text: {
+                content: message,
+              },
+            },
+          ],
+        },
+      },
+    });
+    return response;
+  }
+}
 
 export interface ParsedProject {
   title: string;

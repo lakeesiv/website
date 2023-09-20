@@ -1,1 +1,17 @@
-{"databases":{"18e17d83-1956-42de-a93d-9c34fe391502":{"id":"18e17d83-1956-42de-a93d-9c34fe391502","name":"Projects"},"90944374-9dcf-4d13-9c40-e8f48d55b841":{"id":"90944374-9dcf-4d13-9c40-e8f48d55b841","name":"Blog"},"9c3dc43c-39df-4210-88ba-096393e17376":{"id":"9c3dc43c-39df-4210-88ba-096393e17376","name":"Contact"}},"typesFolderPath":"./types"}
+{
+  "databases": {
+    "18e17d83-1956-42de-a93d-9c34fe391502": {
+      "id": "18e17d83-1956-42de-a93d-9c34fe391502",
+      "name": "Projects"
+    },
+    "90944374-9dcf-4d13-9c40-e8f48d55b841": {
+      "id": "90944374-9dcf-4d13-9c40-e8f48d55b841",
+      "name": "Blog"
+    },
+    "9c3dc43c-39df-4210-88ba-096393e17376": {
+      "id": "9c3dc43c-39df-4210-88ba-096393e17376",
+      "name": "Contact"
+    }
+  },
+  "typesFolderPath": "./types"
+}

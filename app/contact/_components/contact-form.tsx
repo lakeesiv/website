@@ -1,7 +1,6 @@
 "use client";
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import siteConfig from "site.config";
-import * as z from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import {
@@ -17,28 +16,50 @@ import { Input } from "components/ui/input";
 import { Button } from "components/ui/button";
 import { Textarea } from "components/ui/textarea";
 import { Card } from "components/ui/card";
-
-export const contactFormSchema = z.object({
-  title: z.string().min(3).max(50),
-  message: z.string().min(10).max(500),
-  email: z.string().email(),
-  token: z.string(),
-});
+import { ContactFormValues, contactFormSchema } from "./schema";
 
 export function ContactForm() {
-  const form = useForm<z.infer<typeof contactFormSchema>>({
+  const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  function onSubmit(values: z.infer<typeof contactFormSchema>) {
+  function onSubmit(values: ContactFormValues) {
     console.log(values);
   }
 
   return (
     <Card className="p-6 md:p-8">
-      <h1 className="text-2xl font-extrabold mb-4 text-center">Contact</h1>
+      <h1 className="text-2xl font-extrabold mb-6 text-center">Contact</h1>
       <Form {...form}>
         <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <FormField
+              control={form.control}
+              name="name"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Name</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+            <FormField
+              control={form.control}
+              name="email"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel>Email</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+          </div>
           <FormField
             control={form.control}
             name="title"
@@ -46,25 +67,13 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Title</FormLabel>
                 <FormControl>
-                  <Input placeholder="" {...field} />
+                  <Input {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <FormField
-            control={form.control}
-            name="email"
-            render={({ field }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input placeholder="email@example.com" {...field} />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+
           <FormField
             control={form.control}
             name="message"
@@ -72,7 +81,7 @@ export function ContactForm() {
               <FormItem>
                 <FormLabel>Message</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Your message..." {...field} />
+                  <Textarea {...field} />
                 </FormControl>
                 <FormMessage />
               </FormItem>
