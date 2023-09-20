@@ -29,14 +29,34 @@ async function generateImage(request: Request) {
     const q = searchParams.get("q");
 
     if (image && image.startsWith("/")) {
-      image = `https://lakeesiv.com/_next/image?url=${image}&w=${w}&q=${q}`;
-      // replace .undefined with .jpg
-      image = image.replace(".undefined", ".jpg");
-    }
+      // url encode the image
+      image = encodeURIComponent(image);
 
-    // if (image) {
-    //   image += `&w=${w}&q=${q}`;
-    // }
+      image = `https://lakeesiv.com/_next/image?url=${image}`;
+
+      if (image && w && q) {
+        image += `&w=${w}&q=${q}`;
+      }
+
+      // test a fetch request to see if the image exists
+      const res = await fetch(image);
+
+      console.log(`image: ${image}`);
+      console.log(`status: ${res.status}`);
+
+      if (res.status !== 200) {
+        image = image.replace(".undefined", ".jpg");
+        const res = await fetch(image);
+        console.log(`image: ${image}`);
+        console.log(`status: ${res.status}`);
+        if (res.status !== 200) {
+          return defaultImage;
+        }
+      }
+
+      // replace .undefined with .jpg
+      // image = image.replace(".undefined", ".jpg");
+    }
 
     console.log(`title: ${title}`);
     console.log(`image: ${image}`);
