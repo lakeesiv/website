@@ -2,8 +2,8 @@ import { getParsedProjectPages } from "../get";
 import { Title } from "components/text";
 import { ProjectCard } from "./_components/project-card";
 
-export const runtime = "nodejs";
-export const revalidate = 86400;
+// export const runtime = "edge";
+// export const revalidate = 86400;
 
 export default async function BlogIndex() {
   const pages = await getParsedProjectPages();

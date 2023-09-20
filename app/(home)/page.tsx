@@ -2,7 +2,7 @@ import { Description, Title } from "components/text";
 import SocialIcons from "../../components/layout/social-icons";
 import Terminal from "./_components/terminal";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 export const revalidate = 86400;
 
 export default function Home() {

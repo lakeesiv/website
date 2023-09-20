@@ -1,6 +1,8 @@
 import { revalidateTag } from "next/cache";
 import { NextResponse } from "next/server";
 
+export const runtime = "edge";
+
 export const GET = (request: Request) => {
   // get query param of password
   const { searchParams } = new URL(request.url);

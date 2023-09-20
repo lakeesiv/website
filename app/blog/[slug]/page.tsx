@@ -6,8 +6,8 @@ import React from "react";
 import siteConfig from "site.config";
 import { cachedGetBlocks, getBlogPages } from "../../get";
 
-export const runtime = "nodejs";
-export const revalidate = 86400;
+// export const runtime = "edge";
+// export const revalidate = 86400;
 
 const mediaMap = _mediaMap as mediaMapInterface;
 const databaseId = siteConfig.blogDatabaseId;
