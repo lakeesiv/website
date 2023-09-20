@@ -28,6 +28,17 @@ export const getMetaData = ({
 
   const metaData: Metadata = {
     title: title,
+    twitter: {
+      images: [
+        {
+          url: image,
+        },
+      ],
+      title: title,
+      description: description,
+      creator: "@lakeesiv",
+    },
+
     description: description,
     openGraph: {
       title: title,
