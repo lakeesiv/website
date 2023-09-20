@@ -7,7 +7,7 @@ import siteConfig from "site.config";
 import { cachedGetBlocks, getParsedProjectPages } from "../../get";
 import InfoCard from "../_components/info-card";
 
-// export const runtime = "edge";
+export const runtime = "edge";
 // export const revalidate = 86400;
 
 const mediaMap = _mediaMap as mediaMapInterface;
