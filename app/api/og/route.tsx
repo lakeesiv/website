@@ -36,6 +36,8 @@ async function generateImage(request: Request) {
 
       if (image && w && q) {
         image += `&w=${w}&q=${q}`;
+      } else {
+        image += "&w=384&q=75";
       }
 
       // test a fetch request to see if the image exists
