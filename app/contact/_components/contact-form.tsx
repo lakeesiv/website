@@ -1,4 +1,5 @@
 "use client";
+
 import HCaptcha from "@hcaptcha/react-hcaptcha";
 import siteConfig from "site.config";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -17,14 +18,48 @@ import { Button } from "components/ui/button";
 import { Textarea } from "components/ui/textarea";
 import { Card } from "components/ui/card";
 import { ContactFormValues, contactFormSchema } from "./schema";
+import { useState } from "react";
+import { useToast } from "components/ui/use-toast";
 
 export function ContactForm() {
+  const [submitting, setSubmitting] = useState(false);
+  const { toast } = useToast();
+
   const form = useForm<ContactFormValues>({
     resolver: zodResolver(contactFormSchema),
   });
 
-  function onSubmit(values: ContactFormValues) {
-    console.log(values);
+  async function onSubmit(values: ContactFormValues) {
+    // POST to /api/contact with values
+    setSubmitting(true);
+
+    const response = await fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(values),
+      cache: "no-cache",
+    });
+
+    if (response.ok) {
+      // Success
+      toast({
+        title: "Success",
+        description: "Your message has been sent.",
+      });
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    } else {
+      // Error
+      toast({
+        title: "Error",
+        description: "An error occurred while sending your message.",
+        variant: "destructive",
+      });
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -105,7 +140,32 @@ export function ContactForm() {
               />
             </div>
           </div>
-          <Button type="submit">Submit</Button>
+          <Button
+            type="submit"
+            disabled={submitting}
+            onClick={() => {
+              if (!form.formState.isValid) {
+                if (!form.getValues("token")) {
+                  toast({
+                    title: "Error",
+                    description: "Please complete the captcha.",
+                    variant: "destructive",
+                    duration: 5000,
+                  });
+                  return;
+                }
+
+                toast({
+                  title: "Error",
+                  description: "Please fill out all fields.",
+                  variant: "destructive",
+                  duration: 5000,
+                });
+              }
+            }}
+          >
+            Submit
+          </Button>
         </form>
       </Form>
     </Card>
