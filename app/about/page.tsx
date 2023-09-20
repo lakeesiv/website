@@ -8,9 +8,12 @@ export const metadata = getMetaData({
   description: "About Lakee Sivaraya",
 });
 
+const CV_URL =
+  "https://drive.google.com/file/d/1ngt_asikaAwvIaOotN2ZBuMDijdMqbuU/preview";
+
 const Page = () => {
   return (
-    <section className="px-24 pb-12 gap-8">
+    <section className="mx-auto px-8 md:px-24 pb-12 gap-8">
       <Title variant="h2" size="md" className="mt-4">
         About
       </Title>
@@ -21,6 +24,15 @@ const Page = () => {
           in fullstack web development plus a bit of machine learning. I mainly
           specialise in React, Next.js, and Node.js.
         </p>
+      </div>
+      <div className="mt-8 grid items-center justify-center w-full">
+        <iframe
+          src={CV_URL}
+          width={800}
+          height={1000}
+          className="hidden md:block"
+        />
+        <iframe src={CV_URL} className="block md:hidden" height={300} />
       </div>
     </section>
   );
