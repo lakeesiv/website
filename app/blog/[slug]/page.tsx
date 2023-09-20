@@ -50,21 +50,10 @@ export default async function BlogPage({ params }: { params: PageProps }) {
     notFound();
   }
   const blocks = await cachedGetBlocks(page.id);
-  const image = mediaMap[databaseId]?.[page.id]?.cover;
 
   return (
-    <div className="p-2 md:p-12 max-w-[80%] mx-auto">
+    <div className="md:p-12 max-w-[80%] mx-auto">
       <div className="">
-        {image && (
-          <Image
-            src={image}
-            alt={page.title || "Blog Post"}
-            width={500}
-            height={500}
-            className="w-full h-[200px] md:h-[400px] rounded-md object-cover object-center"
-          />
-        )}
-
         <div className="mt-4">
           <div className="text-3xl font-extrabold text-theme-primary hover:text-theme-secondary transition ease-in duration-200 mb-2">
             {page.title}

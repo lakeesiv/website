@@ -50,7 +50,7 @@ export default async function BlogPage({ params }: { params: PageProps }) {
   const blocks = await cachedGetBlocks(page.id);
 
   return (
-    <div className="p-2 md:p-12 max-w-[80%] mx-auto ">
+    <div className="md:p-12 max-w-[80%] mx-auto">
       <div className="flex flex-col md:flex-row justify-between mb-4">
         <div className="">
           <div className="text-3xl font-extrabold text-theme-primary hover:text-theme-secondary transition ease-in duration-200 mb-2">
