@@ -25,10 +25,12 @@ export async function generateMetadata({
   const image = (_mediaMap as mediaMapInterface)[siteConfig.blogDatabaseId]?.[
     page.id
   ]?.cover;
+  const description = page.properties?.Description?.rich_text?.[0]
+    .plain_text as string;
 
   return getMetaData({
     title: page.title || "Blog Post",
-    description: page.title || "Blog Post",
+    description: description || "Blog Post",
     image: image,
   });
 }

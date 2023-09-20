@@ -11,6 +11,21 @@ export const getMetaData = ({
   description,
   image,
 }: CustomMetaData): Metadata => {
+  title = title + " | lakeesiv";
+  image =
+    image ||
+    "https://lakeesiv.vercel.app/api/og" +
+      "?title=" +
+      title +
+      "&description=" +
+      description +
+      "&image=" +
+      image;
+
+  const fallbackImage = title
+    ? "https://lakeesiv.vercel.app/api/og" + "?title=" + title
+    : "https://lakeesiv.vercel.app/api/og";
+
   const metaData: Metadata = {
     title: title,
     description: description,
@@ -23,7 +38,7 @@ export const getMetaData = ({
               url: image,
             },
           ]
-        : "https://lakeesiv.vercel.app/api/og",
+        : fallbackImage,
     },
   };
 
