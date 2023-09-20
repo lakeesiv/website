@@ -1,9 +1,16 @@
 import { BlogCard } from "app/blog/_components/blog-card";
 import { getBlogPages } from "../get";
 import { Title } from "components/text";
+import { Metadata } from "next";
 
-// export const runtime = "edge";
-// export const revalidate = 86400;
+export const metadata: Metadata = {
+  title: "Blog",
+  description: "Lakee Sivaraya's Blog",
+  openGraph: {
+    title: "Blog",
+    description: "Lakee Sivaraya's Blog",
+  },
+};
 
 export default async function BlogIndex() {
   const pages = await getBlogPages();

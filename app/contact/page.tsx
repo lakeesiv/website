@@ -1,5 +1,15 @@
 import React from "react";
 import { ContactForm } from "./_components/contact-form";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact",
+  description: "Contact Lakee Sivaraya",
+  openGraph: {
+    title: "Contact",
+    description: "Contact Lakee Sivaraya",
+  },
+};
 
 const ContactPage = () => {
   return (

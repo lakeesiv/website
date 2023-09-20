@@ -6,14 +6,16 @@ import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import Footer from "components/layout/footer";
 
-// export const metadata: Metadata = {
-//   title: "Lakee Sivaraya",
-//   description: "Lakee Sivaraya's Personal Website",
-//   openGraph: {
-//     title: "Lakee Sivaraya",
-//     description: "Lakee Sivaraya's Personal Website",
-//   },
-// };
+export const metadata: Metadata = {
+  title: "Lakee Sivaraya",
+  description: "Lakee Sivaraya's Personal Website",
+  openGraph: {
+    title: "Lakee Sivaraya",
+    description: "Lakee Sivaraya's Personal Website",
+  },
+};
+
+export const revalidate = 86400;
 
 export default function RootLayout({
   children,
@@ -22,12 +24,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        <title>Lakee Sivaraya</title>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        {/* <meta property="og:image" content="https://emgineer.vercel.app/og/" /> */}
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <body>
         <Providers>
           <div className="flex flex-col min-h-screen">

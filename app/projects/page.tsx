@@ -1,9 +1,16 @@
 import { getParsedProjectPages } from "../get";
 import { Title } from "components/text";
 import { ProjectCard } from "./_components/project-card";
+import { Metadata } from "next";
 
-// export const runtime = "edge";
-// export const revalidate = 86400;
+export const metadata: Metadata = {
+  title: "Projects",
+  description: "Lakee Sivaraya's Projects",
+  openGraph: {
+    title: "Projects",
+    description: "Lakee Sivaraya's Projects",
+  },
+};
 
 export default async function BlogIndex() {
   const pages = await getParsedProjectPages();

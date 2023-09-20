@@ -5,9 +5,38 @@ import _mediaMap from "public/notion-media/media-map.json";
 import React from "react";
 import siteConfig from "site.config";
 import { cachedGetBlocks, getBlogPages } from "../../get";
+import { Metadata } from "next";
 
-// export const runtime = "edge";
-// export const revalidate = 86400;
+export async function generateMetadata({
+  params,
+}: {
+  params: PageProps;
+}): Promise<Metadata> {
+  const { slug } = params;
+  const decodedSlug = decodeURIComponent(slug).replace(" ", "-");
+
+  const pages = await getBlogPages();
+  const page = pages.find((page) => page.slug === decodedSlug);
+  if (!page) {
+    notFound();
+  }
+
+  const image = (_mediaMap as mediaMapInterface)[siteConfig.blogDatabaseId]?.[
+    page.id
+  ]?.cover;
+
+  return {
+    title: page.title,
+    openGraph: {
+      title: page.title,
+      images: [
+        {
+          url: image,
+        },
+      ],
+    },
+  };
+}
 
 const mediaMap = _mediaMap as mediaMapInterface;
 const databaseId = siteConfig.blogDatabaseId;

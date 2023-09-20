@@ -6,15 +6,43 @@ import React from "react";
 import siteConfig from "site.config";
 import { cachedGetBlocks, getParsedProjectPages } from "../../get";
 import InfoCard from "../_components/info-card";
-
-// export const runtime = "edge";
-// export const revalidate = 86400;
-
-const mediaMap = _mediaMap as mediaMapInterface;
-const databaseId = siteConfig.projectsDatabaseId;
+import type { Metadata } from "next";
 
 interface PageProps {
   slug: string;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: PageProps;
+}): Promise<Metadata> {
+  const { slug } = params;
+  const decodedSlug = decodeURIComponent(slug).replace(" ", "-");
+
+  const pages = await getParsedProjectPages();
+  const page = pages.find((page) => page.slug === decodedSlug);
+  if (!page) {
+    notFound();
+  }
+
+  const image = (_mediaMap as mediaMapInterface)[
+    siteConfig.projectsDatabaseId
+  ]?.[page.id]?.cover;
+
+  return {
+    title: page.title,
+    description: page.parsed.description,
+    openGraph: {
+      title: page.title,
+      description: page.parsed.description,
+      images: [
+        {
+          url: image,
+        },
+      ],
+    },
+  };
 }
 
 export default async function BlogPage({ params }: { params: PageProps }) {
@@ -47,8 +75,8 @@ export default async function BlogPage({ params }: { params: PageProps }) {
       <NotionPageBody
         blocks={blocks}
         pageId={page.id}
-        databaseId={databaseId}
-        mediaMap={mediaMap}
+        databaseId={siteConfig.projectsDatabaseId}
+        mediaMap={_mediaMap as mediaMapInterface}
       />
     </div>
   );
