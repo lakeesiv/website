@@ -2,7 +2,6 @@
 
 import React, { FC, HTMLAttributes, useEffect, useRef } from "react";
 import Typed from "typed.js";
-import siteConfig from "site.config";
 import terminalText from "./terminal-text";
 
 interface TerminalProps extends HTMLAttributes<HTMLDivElement> {}
@@ -28,12 +27,12 @@ const Terminal: FC<TerminalProps> = ({}) => {
 
   return (
     <div className="flex flex-col w-full items-center">
-      <div className="w-[80%]  bg-black rounded-t-xl z-10 items-center flex flex-col">
+      <div className="w-[92%] md:w-[80%] bg-black rounded-t-xl z-10 items-center flex flex-col">
         <p className="text-white font-mono text-sm pt-2 pb-2">
           lakeesiv/website
         </p>
       </div>
-      <div className="w-[80%]  bg-muted rounded-b-xl z-10">
+      <div className="w-[92%] md:w-[80%] bg-muted rounded-b-xl z-10">
         <div className="p-4">
           <span
             className="font-mono w-[80%] whitespace-pre-wrap text-sm  break-all"
