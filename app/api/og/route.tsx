@@ -18,7 +18,7 @@ export const GET = async (request: Request) => {
   }
 };
 
-export async function generateImage(request: Request) {
+async function generateImage(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
 
