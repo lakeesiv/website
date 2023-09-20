@@ -28,7 +28,7 @@ const InfoCard: FC<InfoCardProps> = ({ page }) => {
         <a href={website} target="_blank" rel="noopener noreferrer">
           <div className="flex flex-row items-center gap-3">
             <Globe className="w-5 h-5" />
-            <div className="hover:text-theme-secondary text-muted-foreground transition ease-in duration-200">
+            <div className="max-w-[80%] md:w-full break-all hover:text-theme-secondary text-muted-foreground transition ease-in duration-200">
               {website}
             </div>
           </div>
