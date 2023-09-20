@@ -5,15 +5,12 @@ import { Providers } from "components/layout/providers";
 import { Analytics } from "@vercel/analytics/react";
 import type { Metadata } from "next";
 import Footer from "components/layout/footer";
+import { getMetaData as getMetadata } from "lib/meta";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = getMetadata({
   title: "Lakee Sivaraya",
   description: "Lakee Sivaraya's Personal Website",
-  openGraph: {
-    title: "Lakee Sivaraya",
-    description: "Lakee Sivaraya's Personal Website",
-  },
-};
+});
 
 export const revalidate = 86400;
 

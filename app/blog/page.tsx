@@ -2,15 +2,12 @@ import { BlogCard } from "app/blog/_components/blog-card";
 import { getBlogPages } from "../get";
 import { Title } from "components/text";
 import { Metadata } from "next";
+import { getMetaData } from "lib/meta";
 
-export const metadata: Metadata = {
+export const metadata = getMetaData({
   title: "Blog",
   description: "Lakee Sivaraya's Blog",
-  openGraph: {
-    title: "Blog",
-    description: "Lakee Sivaraya's Blog",
-  },
-};
+});
 
 export default async function BlogIndex() {
   const pages = await getBlogPages();

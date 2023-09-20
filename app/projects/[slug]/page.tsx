@@ -7,6 +7,7 @@ import siteConfig from "site.config";
 import { cachedGetBlocks, getParsedProjectPages } from "../../get";
 import InfoCard from "../_components/info-card";
 import type { Metadata } from "next";
+import { getMetaData } from "lib/meta";
 
 interface PageProps {
   slug: string;
@@ -30,19 +31,11 @@ export async function generateMetadata({
     siteConfig.projectsDatabaseId
   ]?.[page.id]?.cover;
 
-  return {
-    title: page.title,
-    description: page.parsed.description,
-    openGraph: {
-      title: page.title,
-      description: page.parsed.description,
-      images: [
-        {
-          url: image,
-        },
-      ],
-    },
-  };
+  return getMetaData({
+    title: page.title || "Project Post",
+    description: page.parsed.description || "Project Post",
+    image: image,
+  });
 }
 
 export default async function BlogPage({ params }: { params: PageProps }) {

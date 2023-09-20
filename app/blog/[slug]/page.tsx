@@ -6,6 +6,7 @@ import React from "react";
 import siteConfig from "site.config";
 import { cachedGetBlocks, getBlogPages } from "../../get";
 import { Metadata } from "next";
+import { getMetaData } from "lib/meta";
 
 export async function generateMetadata({
   params,
@@ -25,17 +26,11 @@ export async function generateMetadata({
     page.id
   ]?.cover;
 
-  return {
-    title: page.title,
-    openGraph: {
-      title: page.title,
-      images: [
-        {
-          url: image,
-        },
-      ],
-    },
-  };
+  return getMetaData({
+    title: page.title || "Blog Post",
+    description: page.title || "Blog Post",
+    image: image,
+  });
 }
 
 const mediaMap = _mediaMap as mediaMapInterface;

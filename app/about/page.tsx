@@ -1,15 +1,12 @@
 import React from "react";
 import { Title } from "components/text";
 import { Metadata } from "next";
+import { getMetaData } from "lib/meta";
 
-export const metadata: Metadata = {
+export const metadata = getMetaData({
   title: "About",
   description: "About Lakee Sivaraya",
-  openGraph: {
-    title: "About",
-    description: "About Lakee Sivaraya",
-  },
-};
+});
 
 const Page = () => {
   return (
