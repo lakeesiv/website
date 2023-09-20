@@ -1,9 +1,5 @@
-import { Description, Title } from "components/text";
-import SocialIcons from "../../components/layout/social-icons";
+import { Title } from "components/text";
 import Terminal from "./_components/terminal";
-
-// export const runtime = "edge";
-// export const revalidate = 86400;
 
 export default function Home() {
   return (
