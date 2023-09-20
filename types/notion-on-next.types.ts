@@ -48,3 +48,17 @@ export type BlogPageObjectResponse = NotionOnNextPageObjectResponse & {
     Name: Extract<PageObjectResponse["properties"][string], { type: "title" }>;
   };
 };
+export type ContactPageObjectResponse = NotionOnNextPageObjectResponse & {
+  properties: {
+    Text: Extract<
+      PageObjectResponse["properties"][string],
+      { type: "rich_text" }
+    >;
+    Email: Extract<PageObjectResponse["properties"][string], { type: "email" }>;
+    Read: Extract<
+      PageObjectResponse["properties"][string],
+      { type: "checkbox" }
+    >;
+    Title: Extract<PageObjectResponse["properties"][string], { type: "title" }>;
+  };
+};
