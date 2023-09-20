@@ -28,9 +28,15 @@ async function generateImage(request: Request) {
     const w = searchParams.get("w");
     const q = searchParams.get("q");
 
-    if (image) {
-      image += `&w=${w}&q=${q}`;
+    if (image && image.startsWith("/")) {
+      image = `https://lakeesiv.com/_next/image?url=${image}&w=${w}&q=${q}`;
+      // replace .undefined with .jpg
+      image = image.replace(".undefined", ".jpg");
     }
+
+    // if (image) {
+    //   image += `&w=${w}&q=${q}`;
+    // }
 
     console.log(`title: ${title}`);
     console.log(`image: ${image}`);

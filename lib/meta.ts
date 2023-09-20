@@ -12,7 +12,7 @@ export const getMetaData = ({
   image,
 }: CustomMetaData): Metadata => {
   const img = image
-    ? "https://lakeesiv.vercel.app/api/og" +
+    ? "https://lakeesiv.com/api/og" +
       "?title=" +
       title +
       "&description=" +
@@ -20,8 +20,8 @@ export const getMetaData = ({
       "&image=" +
       image
     : title
-    ? "https://lakeesiv.vercel.app/api/og" + "?title=" + title
-    : "https://lakeesiv.vercel.app/api/og";
+    ? "https://lakeesiv.com/api/og" + "?title=" + title
+    : "https://lakeesiv.com/api/og";
 
   const metaData: Metadata = {
     title: title + " | lakeesiv",
