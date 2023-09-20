@@ -11,27 +11,24 @@ export const getMetaData = ({
   description,
   image,
 }: CustomMetaData): Metadata => {
-  title = title + " | lakeesiv";
-  image =
-    image ||
-    "https://lakeesiv.vercel.app/api/og" +
+  const img = image
+    ? "https://lakeesiv.vercel.app/api/og" +
       "?title=" +
       title +
       "&description=" +
       description +
       "&image=" +
-      image;
-
-  const fallbackImage = title
+      image
+    : title
     ? "https://lakeesiv.vercel.app/api/og" + "?title=" + title
     : "https://lakeesiv.vercel.app/api/og";
 
   const metaData: Metadata = {
-    title: title,
+    title: title + " | lakeesiv",
     twitter: {
       images: [
         {
-          url: image,
+          url: img,
         },
       ],
       title: title,
@@ -41,15 +38,13 @@ export const getMetaData = ({
 
     description: description,
     openGraph: {
-      title: title,
+      title: title + " | lakeesiv",
       description: description,
-      images: image
-        ? [
-            {
-              url: image,
-            },
-          ]
-        : fallbackImage,
+      images: [
+        {
+          url: img,
+        },
+      ],
     },
   };
 
