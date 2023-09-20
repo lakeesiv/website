@@ -27,7 +27,6 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
-    "drizzle-orm": "^0.28.5",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "katex": "^0.16.8",
