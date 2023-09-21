@@ -23,11 +23,12 @@ const fetchReqUrl = coloredText(
   stringColor
 );
 const resText = coloredText("res", blueColor);
+const awaitText = coloredText("await", blueColor);
 
 const terminalText = '<termialStart>^1000 node ^1000\n\
-`Welcome to Node.js v20.6.0.\n\
+`Welcome to Node.js v18.7.0.\n\
 Type ".help" for more information.`\n\
-`>`^1000 <fetchText>(<fetchReqUrl>).<thenText>(<resText> => <resText2>.<jsonText>()).<thenText>(<consoleText>) ^1000\n'
+`>`^1000 <awaitText> <fetchText>(<fetchReqUrl>).<thenText>(<resText> => <resText2>.<jsonText>()) ^1000\n'
   .concat(`${stats}`)
   .replace("<termialStart>", terminalStart)
   .replace("<fetchText>", fetchText)
@@ -36,6 +37,7 @@ Type ".help" for more information.`\n\
   .replace("<resText>", resText)
   .replace("<resText2>", resText)
   .replace("<jsonText>", jsonText)
-  .replace("<consoleText>", consoleText);
+  .replace("<consoleText>", consoleText)
+  .replace("<awaitText>", awaitText);
 
 export default terminalText;
