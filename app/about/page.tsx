@@ -9,7 +9,7 @@ export const metadata = getMetaData({
 });
 
 const CV_URL =
-  "https://drive.google.com/file/d/1ngt_asikaAwvIaOotN2ZBuMDijdMqbuU/preview";
+  "https://drive.google.com/file/d/1LYVjJUNyFB39Z0B5cSVMqMOUk6acyg5x/preview";
 
 const Page = () => {
   return (
@@ -18,12 +18,16 @@ const Page = () => {
         About
       </Title>
       <div className="mt-4">
-        <p>
-          Hi! My name is Lakee (pronounced lack-E), and I am a Third Year
-          Engineering student at the Univeristy of Cambridge. My interests lie
-          in fullstack web development plus a bit of machine learning. I mainly
-          specialise in React, Next.js, and Node.js.
-        </p>
+        Hi! My name is Lakee (pronounced lack-E), and I am a Fourth Year
+        Engineering student at the Univeristy of Cambridge. My interests lie in
+        fullstack web development plus a bit of machine learning. I mainly
+        specialise in React, Next.js, and Node.js.
+      </div>
+      <div className="mt-4">
+        Academically I specialize in Information and Computer Engineering with
+        focus on Machine Learning and Computer Vision. My fourth year project is
+        on the topic of {"'"}Unifying Transformers and Convolutional Neural
+        Processes{"'"}.
       </div>
       <div className="mt-8 grid items-center justify-center w-full">
         <iframe
