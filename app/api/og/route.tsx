@@ -86,7 +86,6 @@ async function generateImage(request: Request) {
 const defaultImage = (
   <div
     style={{
-      backgroundColor: "black",
       backgroundSize: "150px 150px",
       height: "100%",
       width: "100%",
@@ -97,6 +96,7 @@ const defaultImage = (
       flexDirection: "column",
       flexWrap: "nowrap",
     }}
+    tw="bg-gray-900 h-full w-full"
   >
     <div
       style={{
@@ -155,7 +155,7 @@ const defaultImage = (
 );
 
 const justTitle = (title: string) => (
-  <div tw="flex flex-col bg-gray-900 h-full w-full">
+  <div tw="flex flex-col bg-gray-900 h-full w-full px-24 py-8">
     <svg
       viewBox="0 0 504 148"
       fill="none"
@@ -231,7 +231,7 @@ const justTitle = (title: string) => (
 );
 
 const all = (title: string, description: string, image: string) => (
-  <div tw="flex flex-col bg-gray-900 h-full w-full">
+  <div tw="flex flex-col bg-gray-900 h-full w-full px-24 py-8">
     <svg
       viewBox="0 0 504 148"
       fill="none"
