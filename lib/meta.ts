@@ -11,6 +11,11 @@ export const getMetaData = ({
   description,
   image,
 }: CustomMetaData): Metadata => {
+  // If we are in development mode, don't add any meta data
+  if (process.env.NODE_ENV === "development") {
+    return {};
+  }
+
   const img = image
     ? "https://lakeesiv.com/api/og" +
       "?title=" +

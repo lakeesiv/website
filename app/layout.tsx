@@ -8,7 +8,7 @@ import Footer from "components/layout/footer";
 import { getMetaData as getMetadata } from "lib/meta";
 
 export const metadata: Metadata = getMetadata({
-  title: "Lakee Sivaraya",
+  title: "",
   description: "Lakee Sivaraya's Personal Website",
 });
 
